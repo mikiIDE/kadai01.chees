@@ -1,0 +1,41 @@
+
+.button_container {
+  display: flex;
+  justify-content: center;  /* 左右中央 */
+  align-items: center;      /* 上下中央 */
+  flex-direction: column;
+}
+
+.more-button {
+  width: 300px;
+  height: 60px;
+  font-size: 23px;
+  font-weight: bold;
+  /* background-color: #e8f658;  */
+  background-color:#ffd61a;/* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボーダーなし */
+  border-radius: 30px;
+  cursor: pointer; /* カーソルがポインターに */
+  transition: background-color 0.3s ease; /* ホバー時の背景色変更をスムーズにするらしい */
+  display: flex;             /* フレックスボックスで内容を中央に */
+  justify-content: center;   /* ボタン内の文字を左右中央 */
+  align-items: center;       /* ボタン内の文字を上下中央 */
+  margin: 60px auto;
+}
+
+.more-button:hover {
+  background-color: #FFFE03; /* ホバー時の背景色 */
+  color:black;
+}
+
+.accordion-content1 {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

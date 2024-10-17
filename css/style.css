@@ -1,0 +1,554 @@
+body {
+  width: 1200px;
+  margin: auto;
+  /* background-color: blanchedalmond; */
+  font-size: 16px;
+  line-height: 24px;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  /* background: blanchedalmond; */
+  background-color: white;
+  width: 1200px;
+}
+
+h2 {
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  margin:60px auto 30px auto;
+}
+
+h2 span {
+  background: linear-gradient(transparent 60%, #FFFE03 60%);
+}
+
+/* 以下のscroll-padding-topを追加することで
+ヘッダー固定→ページ内リンクがずれるという問題を解決した！ */
+html{
+  scroll-padding-top: 130px;
+  ::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+/* cssはpaddingを必ず使うんだから、
+先にさっさと書いとくべし！ */
+* {
+  box-sizing: border-box;
+}
+
+/* 以下はヘッダーのナビゲーションについて */
+nav {
+  font-size: 21px;
+  text-align: center;
+  width: 100%;
+}
+
+nav ul {
+  margin: 50px 0;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav li:hover {
+  border-bottom: 8px solid #FFFE03;
+  /* border-bottom: 2px solid #FF7A37; */
+  /* 下線の太さや色を指定*/
+}
+
+.mainvisual {
+  position: relative;
+
+}
+
+.mainvisual img {
+  width: 100%;
+  margin-top: 130px;
+}
+
+.maintext {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 50%;
+  /* left: 50%; */
+  transform: translate(-50%, -50%);
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+   /* 以下をアニメーションのために追加 */
+   opacity: 0;
+   transform: translateY(50px);  /* 最初は下に少しずれた状態からスタート */
+   animation: floatIn 1.5s ease-out forwards;  /* 1.5秒かけてアニメーション */
+}
+
+/* 以下をアニメーションのために追加 */
+/* アニメーションのキー */
+@keyframes floatIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);  /* 初期位置 */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);  /* 最終位置 */
+  }
+}
+
+.main1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.main2 {
+  font-size: 32px;
+}
+
+
+/* ここからAboutの領域 */
+#about {
+  text-align: center;
+}
+
+/* #about-title {
+  font-size: 24px;
+  color: #ffd61a;
+  margin: 60px auto 30px auto;
+} */
+
+.about {
+  font-size: 16px;
+}
+
+.about1 {
+  font-size: 18px;
+  margin: auto auto 60px auto;
+}
+
+.about3 {
+  margin: 40px auto;
+}
+
+.about5 {
+  margin: 40px auto 80px auto;
+}
+
+/* 画像を永遠に流すアニメーション */
+@keyframes infinity-scroll-left {
+from {
+  transform: translateX(0);
+}
+to {
+  transform: translateX(-100%);
+}
+}
+
+.scroll-infinity__wrap {
+display: flex;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.scroll-infinity__list {
+display: flex;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.scroll-infinity__list--left {
+display: inline-flex;
+animation: infinity-scroll-left 40s infinite linear;
+/* 何秒かけて全部の画像が流れ終わるかを示す */
+}
+
+.scroll-infinity__item {
+margin-right: 50px; /* 写真の間隔 */
+flex-shrink: 0;
+}
+
+.scroll-infinity__item>img {
+width: 100%;
+height: auto;
+}
+
+.scroll-infinity__wrap:hover .scroll-infinity__list--left {
+animation-play-state: paused;
+}
+
+
+
+/* .images img {
+  margin: auto auto 60px auto;
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+  height: 100%;
+  width: 1200px;
+} */
+
+
+/* ここからCourseの領域 */
+#course {
+  text-align: center;
+  margin-top:  150px;
+}
+
+/* .course {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+} */
+
+.course_top {
+  margin-bottom: 60px;
+}
+
+.courseimg img {
+  width: 600px;
+  height: auto;
+  border-radius: 30%;
+  /* 角を少し丸める */
+}
+
+.courseimg img:hover{
+transform: scale(1.1);
+transition:all 0.3s;
+}
+
+.course1 {
+  display: flex;
+  /* 横並びにするためのやつ！ */
+  align-items: center;
+  /* 垂直方向で中央揃え */
+  gap: 50px;
+  /* 画像とテキストの隙間 */
+}
+
+.course_main {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.course_text {
+  width: 480px;
+}
+
+
+
+
+
+
+/* ここからNewsの領域 */
+#news{
+  text-align: center;
+}
+/* .news_title{
+  font-size: 24px;
+  color:#ffd61a;
+  font-weight: bold;
+  margin-top:60px;
+  margin-bottom:30px;
+} */
+.news_jap{
+  margin-bottom :60px;
+}
+.news_top{
+  display: flex;
+  justify-content: center;
+  gap:30px;
+}
+
+.news{
+  width: 300px;
+  text-align: left;
+}
+
+.news:hover {
+  transform: translateY(-5px);
+}
+
+.news img:hover{
+  border-radius: 20%;
+}
+
+.news_date{
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+
+
+
+/* ここからMoreの領域 */
+/* containerなしだと、「More」という文字のみ
+中央配置だけど文字が上にずれる事象あり*/
+
+.button_container {
+  display: flex;
+  justify-content: center;  /* 左右中央 */
+  align-items: center;      /* 上下中央 */
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.more-button {
+  width: 300px;
+  height: 60px;
+  font-size: 23px;
+  font-weight: bold;
+  /* background-color: #e8f658;  */
+  background-color:#ffd61a;/* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボーダーなし */
+  border-radius: 30px;
+  cursor: pointer; /* カーソルがポインターに */
+  transition: background-color 0.3s ease; /* ホバー時の背景色変更をスムーズにするらしい */
+  display: flex;             /* フレックスボックスで内容を中央に */
+  justify-content: center;   /* ボタン内の文字を左右中央 */
+  align-items: center;       /* ボタン内の文字を上下中央 */
+  margin: 60px auto;
+}
+
+.more-button:hover {
+  background-color: #FFFE03; /* ホバー時の背景色 */
+  color:black;
+}
+
+.accordion-content1 {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+/* ここからAccessの領域 */
+#access {
+  text-align: center;
+}
+
+#access-container{
+  /* background-color: rgb(251, 243, 229); */
+  background-color: #ffd61a42;
+  padding: 60px 0;
+  /* ちょっと目立つように、アクセスの部分だけ背景指定 */
+}
+
+/* .access{
+  font-size: 24px;
+  font-weight:bold;
+  margin-top: 60px;
+  margin-bottom: 30px;
+} */
+
+.access-subtitle{
+  font-size: 16px;
+}
+
+.g-map{
+  margin:60px auto;
+}
+
+/* テーブル全体のスタイル */
+table {
+  border-collapse: separate; /* セルの境界を分ける */
+  border-spacing: 5px;       /* 列間のスペースを5pxに設定 */
+  /* width: 100%; ここをテキストアウトしないとレイアウト合わせられず*/
+  line-height:30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* テーブルセルのボーダーをなくす */
+td {
+  border: none;              /* ボーダーを消す */
+  padding: 0px;             /* セル内の余白 */
+  text-align: left;
+  padding-left: 64px;
+}
+
+/* 列の幅を3:7に設定 */
+/* th{
+  width: 40%;
+}
+
+td {
+  width: 60%;
+} */
+
+/* ここからcontactの領域 */
+
+#contact{
+  text-align: center;
+}
+
+.contact-title{
+  font-size: 24px;
+  font-weight: bold;
+  margin:60px auto 30px auto;
+}
+
+.contact-sub{
+  margin-top: 60px;
+}
+
+.contact-add{
+  margin:30px auto 70px auto;
+}
+
+/* コンタクトフォームの領域 */
+
+/* .contact{
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding-left: 100px;
+} */
+
+.contact-item{
+  text-align: left;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.form-group {
+  margin-bottom: 20px; /* 各項目の間隔 */
+  border-bottom: 5px solid #151414; /* 線のスタイル */
+  padding-bottom: 10px; /* 線の下に余白 */
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px; /* 上部の余白 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ここからチェックボックスの設定 */
+.checkbox-2 {
+  border: none;
+}
+
+.checkbox-2 label {
+  display: flex;
+  align-items: center;
+  gap: 0 .5em;
+  position: relative;
+  margin-bottom: .5em;
+  cursor: pointer;
+}
+
+.checkbox-2 label::before {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #d6dde3;
+  content: '';
+}
+
+.checkbox-2 label:has(:checked)::after {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  transform: rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border: solid #030303;
+  border-width: 0 3px 3px 0;
+  content: '';
+}
+
+.checkbox-2 input {
+  display: none;
+}
+/* ここまでチェックボックスの設定 */
+
+.contact button {
+  padding: 10px 50px;
+  background-color: #ffd61a;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* 以下の2つを足すことでボタンが真ん中に来た */
+  display: block;
+  margin: 30px auto 140px auto;
+}
+
+.contact button:hover {
+  font-weight: bold;
+  color:#ffd61a;
+  background-color: #f5f6f3;
+}
+
+
+/* ここからフッターの領域 */
+
+.footer-2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px 10px 10px;
+  /* background-color:#e8f398; */
+  background-color: #ffd61a42;
+  /* background-color: #c6c6c6; */
+}
+
+.footer-2__logo {
+  width: 130px;
+  height: 30px;
+}
+
+.footer-2__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 1.5em;
+  list-style-type: none;
+  margin: 0 0 .5em;
+  padding: .5em;
+}
+
+.footer-2__sns-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-2__copyright {
+  margin: 0;
+  font-weight: 200;
+  font-size: .8em;
+}
+
+
+
+
