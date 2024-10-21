@@ -5,7 +5,7 @@
 - HTML/CSSの基礎を使い、見本サイトをもとにコーディングしました
 
 ## ③アプリのデプロイURL
-デプロイしている場合はURLを記入（https://mikiide.github.io/kadai01.chees/）
+デプロイしている場合はURLを記入 → https://mikiide.github.io/kadai01.chees/
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 - ID: none
